@@ -11,3 +11,7 @@ RUN /usr/sbin/useradd $USER -m -d /home/$USER -g $USER -s /bin/bash
 RUN echo $USER 'ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 USER docker_ansible
+
+WORKDIR /tmp/environment-setup
+
+CMD ["sh", "/tmp/environment-setup/setup.sh"]
