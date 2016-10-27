@@ -4,3 +4,4 @@
   roles:
   - openvpn
   - java
+  - maven
