@@ -1,0 +1,16 @@
+- name: Install nodejs
+  apt: name=nodejs state=present update_cache=true
+
+- name: Install npm
+  apt: name=npm state=present update_cache=true
+
+- name: Install n
+  npm: name=n global=yes state=present
+
+- command: n 0.10.48
+
+- name: Install bower
+  npm: name=bower global=yes state=present
+
+- name: Install gulp
+  npm: name=gulp global=yes state=present
