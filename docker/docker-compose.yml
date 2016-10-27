@@ -1,0 +1,5 @@
+ubuntu-ansible-env-setup:
+  image: ansible-env-setup
+  container_name: ubuntu-ansible-env-setup
+  volumes:
+    - ../:/tmp/environment-setup
