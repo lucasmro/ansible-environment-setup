@@ -1,0 +1,16 @@
+- name: Download docker
+  get_url:
+    url: https://get.docker.com
+    dest: /tmp/docker-install.sh
+
+- name: Install docker
+  script: /tmp/docker-install.sh
+
+- name: Add to docker group
+  shell: usermod -aG docker $SUDO_USER
+
+- name: Install docker-compose
+  get_url:
+    url: https://github.com/docker/compose/releases/download/1.8.1/docker-compose-{{ ansible_system }}-{{ ansible_machine }}
+    dest: /usr/local/bin/docker-compose
+    mode: 0755
